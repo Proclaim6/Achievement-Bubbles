@@ -1,52 +1,97 @@
 body {
     background-color: #0c3440;
     font-family: 'Inter', sans-serif;
-    margin: 0; 
-    height: 100%; 
+    margin: 0;
+    height: 100%;
     overflow: hidden;
+    display: flex; /* Use flexbox to center the main content */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.time-greeting {
+    color: #edfefe;
+    z-index: 1000;
+    position: relative;
+    text-align: center; /* Ensure greeting text is centered */
+}
+
+.main-greeting {
+    color: #edfefe;
+    z-index: 1000;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center; /* Ensure text inside this div is centered */
+}
+
+.main-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid #71e6ef;
+    border-radius: 6px;
+    box-sizing: border-box;
+    background: transparent;
+    backdrop-filter: blur(50px);
+    z-index: 1000;
+    position: relative;
+    max-width: 90%; /* Changed to 90% for better responsiveness */
+    width: fit-content; /* Allow the content to determine the width */
+    padding: 1.5rem; /* Reduced padding for smaller screens */
+    margin-top: 0; /* Remove fixed margin-top */
 }
 
 .input-group {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 90vh;
-  z-index: 1000;
-  position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    position: relative;
+    flex-wrap: nowrap; /* Prevent elements from wrapping */
+    max-width: 100%; /* Ensure the input group doesn't exceed its container */
 }
 
 .input {
-  min-height: 50px;
-  padding: 0 1rem;
-  color: #fff;
-  font-size: 15px;
-  border: 1px solid #71e6ef;
-  border-radius: 6px 0 0 6px;
-  box-sizing: border-box;
-  background: transparent;
-  backdrop-filter: blur(50px);
+    min-height: 50px;
+    padding: 0 1rem;
+    color: #fff;
+    font-size: 15px;
+    border: 1px solid #71e6ef;
+    border-radius: 6px 0 0 6px;
+    box-sizing: border-box;
+    background: transparent;
+    backdrop-filter: blur(50px);
+    flex: 1; /* Allow the input to grow and shrink */
+    min-width: 0; /* Prevents overflow on very small screens */
 }
 
 .button--submit {
-  min-height: 50px;
-  padding: .5em 1em;
-  border: none;
-  border-radius: 0 6px 6px 0;
-  background-color: #71e6ef;
-  color: #373a3a;
-  font-size: 15px;
-  cursor: pointer;
-  transition: background-color .3s ease-in-out;
-  box-sizing: border-box;
+    min-height: 50px;
+    padding: .5em 1em;
+    border: none;
+    border-radius: 0 6px 6px 0;
+    background-color: #71e6ef;
+    color: #373a3a;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color .3s ease-in-out;
+    box-sizing: border-box;
+    white-space: nowrap; /* Prevents button text from wrapping */
 }
 
 .button--submit:hover {
-  background-color: #1491a6;
+    background-color: #1491a6;
 }
 
 .input:focus, .input:focus-visible {
-  border-color: #15b5c5;
-  outline: none;
+    border-color: #15b5c5;
+    outline: none;
 }
 
 .bubble {
@@ -63,8 +108,8 @@ body {
     text-align: center;
     padding: 10px;
     color: #edfefe;
-    width: 150px;
-    height: 150px;
+    width: 175px;
+    height: 175px;
     overflow: hidden;
 }
 
@@ -75,4 +120,46 @@ body {
     50% {
         transform: translateY(-20px);
     }
+}
+
+footer {
+    background: transparent;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    position: relative;
+    margin-top: auto; /* Push the footer to the bottom */
+    padding: 1rem;
+    position: fixed; /* Make the footer fixed at the bottom */
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+nav {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 2000;
+}
+
+.removeBubbles {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: background-color 0.2s ease-in-out;
+    padding: 0;
+}
+
+.removeBubbles img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.removeBubbles:hover img {
+    transform: translateY(-3px);
 }

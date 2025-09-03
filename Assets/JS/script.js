@@ -1,3 +1,31 @@
+var welcome;
+var date = new Date();
+var hour = date.getHours();
+var minute = date.getMinutes();
+var second = date.getSeconds();
+
+if (minute < 10) {
+    minute = "0" + minute;
+}
+if (second < 10) {
+    second = "0" + second;
+}
+if (hour < 12) {
+    welcome = "Good Morning,";
+} else if (hour < 17) {
+    welcome = "Good Afternoon,";
+} else {
+    welcome = "Good Evening,";
+}
+
+var greeting = document.querySelector(".time-greeting");
+
+if (greeting) {
+    greeting.innerHTML = "<h3>" + welcome + "</h3>";
+}
+
+document.getElementById("current-year").textContent = new Date().getFullYear();
+
 document.querySelector("form").addEventListener("submit", function(e) {
     e.preventDefault();
 
@@ -39,4 +67,20 @@ function createBubble(content) {
 
     // Add the bubble to the page
     document.body.appendChild(bubble);
+}
+
+// This function removes all elements with the class 'bubble'
+function removeAllBubbles() {
+    const bubbles = document.querySelectorAll('.bubble');
+    bubbles.forEach(bubble => {
+        bubble.remove();
+    });
+}
+
+// Get the button element
+const removeButton = document.querySelector('.removeBubbles');
+
+// Add a click event listener to the button
+if (removeButton) {
+    removeButton.addEventListener('click', removeAllBubbles);
 }

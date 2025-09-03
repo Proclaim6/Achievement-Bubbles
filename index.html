@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="P76h37QqYpGLxSFTTeuoVvjPEZs75I8vKIVchnVrDnM" />
-    <title>Good Bubbles</title>
+    <meta name="description" content="Where users can enter what they have achieved that day. This helps improve their well being and spreads positivity.">
+    <title>Achievement Bubbles</title>
     <link rel="icon" type="image/x-icon" href="Assets/Images/bubbles-icon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,11 +13,24 @@
     <link rel="stylesheet" href="Assets/CSS/styles.css">
 </head>
 <body>
-    <form action="" class="input-group">
-        <input type="text" class="input" placeholder="What went well today?" maxlength="20">
-        <input class="button--submit" value="Add" type="submit">
-    </form>
+    <nav>
+        <button class="removeBubbles"><img src="Assets/Images/bin.svg" alt="Bin"></button>
+    </nav>
+    <div class="main-content">
+        <div class="time-greeting"></div>
+        <div class="main-greeting">
+            <h3>Welcome to Achievement Bubbles!</h3>
+            <p>The purpose of this website is to enter something you feel have ahcieved or went well today.</p>
+        </div>
+        <form action="" class="input-group">
+            <input type="text" class="input" placeholder="What went well today?" maxlength="20">
+            <input class="button--submit" value="Add" type="submit">
+        </form>
+    </div>
     <div class="bubbles-container"></div>
+    <footer>
+        <p>&copy; <span id="current-year"></span> Jamie Newton. All rights reserved.</p>
+    </footer>
     <script src="Assets/JS/script.js"></script>
 </body>
 </html>
